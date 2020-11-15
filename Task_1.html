@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task_1</title>
+    <style>
+
+    </style>
+    <script>
+
+        window.onload = function(){
+            // Connect to the sole -div- on page
+            var div = document.getElementsByTagName("div")[0];
+            // Add handler on button push
+            document.getElementById("btn").onclick = function(){
+            // We accept strig value from input and shift it to integral value
+            var input = parseFloat(document.getElementById("input").value);
+            // We get arbitrary value...
+            var numberSite = getRandom(1,100);
+            // ... and compare it with reported value
+            if(input > numberSite){
+                div.innerHTML = "The inserted number is greater than wished"
+                div.style.backgroundColor = "yellow";
+            }
+            else {
+                div.innerHTML = "You guessed!";
+                div.style.backgroundColor = "green";
+            }
+            }
+        }
+            // getRandom() function returns arbitrary value from the definite range
+            function getRandom(min, max)
+            {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+    </script>
+    <style>
+        div{
+            width: 128px;
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+    <input id="input"
+            type="text"/>
+    <input id="btn" type="button"
+            value="click"/>
+    <div></div>
 </body>
 </html>
