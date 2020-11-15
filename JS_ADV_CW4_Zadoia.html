@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CW4_Zadoia</title>
     <style>
         div {
@@ -14,10 +14,41 @@
             margin: 5px;
         }
     </style>
+
     <script>
+        // Get access to all -div- on page
+        var div = document.getElementsByTagName("div");
+        //Counter
+        var count = 0;
+        // Events Handler
+        window.onload = function(){
+            document.getElementsByTagName("input")[0].onclick = function () {
+                // Counter check (has it handled the last element?)
+                if (count > 4){
+                // When counter comes to 5 it will be reseted
+                count = 0;
+                // The last -div- changes to green
+                div[4].style.backgroundColor = "green";
+                }
+                // Go to -div- array with the help of cycle and change the counter value
+                for (var i=0; i < count; i++) {
+                    div[i].style.backgroundColor = "green";
+                };
+                // We change color of the mentioned -div- to red
+                div[count].style.backgroundColor = "red";
+                // We increase the counter value
+                count++;
+            }
+        }
     </script>
 </head>
 <body>
-    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <input type="Button"
+            value="Click"/>
 </body>
 </html>
